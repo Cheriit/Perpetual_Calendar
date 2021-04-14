@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_year_selection">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.cherit.perpetualcalendar.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_year_selection"
+        android:name="com.cherit.perpetualcalendar.ui.year_selection.YearSelectionFragment"
+        android:label="@string/title_year_selection"
+        tools:layout="@layout/fragment_year_selection" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.cherit.perpetualcalendar.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_date_calculator"
+        android:name="com.cherit.perpetualcalendar.ui.date_calculator.DateCalculatorFragment"
+        android:label="@string/title_date_calculator"
+        tools:layout="@layout/fragment_date_calculator" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.cherit.perpetualcalendar.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_shopping_sunday_list"
+        android:name="com.cherit.perpetualcalendar.ui.shopping_sunday.ShoppingSundayFragment"
+        android:label="@string/title_shopping_sunday"
+        tools:layout="@layout/fragment_shopping_sunday" />
 
 </navigation>

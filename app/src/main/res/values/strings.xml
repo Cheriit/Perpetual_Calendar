@@ -3,6 +3,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_date_calculator">Kalkulator daty</string>
+    <string name="title_year_selection">Wybór roku</string>
+    <string name="title_shopping_sunday">Niedziele handlowe</string>
     <string name="calculator">Kalkulator</string>
     <string name="shopping_sunday_list">Niedziele handlowe</string>
     <string name="year_selection">Wybór roku</string>

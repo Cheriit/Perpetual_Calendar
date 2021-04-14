@@ -1,4 +1,4 @@
-package com.cherit.perpetualcalendar.ui.date_calculator
+package com.cherit.perpetualcalendar.ui.views.date_calculator
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

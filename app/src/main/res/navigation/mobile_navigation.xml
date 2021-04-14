@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_year_selection"
-        android:name="com.cherit.perpetualcalendar.ui.year_selection.YearSelectionFragment"
+        android:name="com.cherit.perpetualcalendar.ui.views.year_selection.YearSelectionFragment"
         android:label="@string/title_year_selection"
         tools:layout="@layout/fragment_year_selection" />
 
     <fragment
         android:id="@+id/navigation_date_calculator"
-        android:name="com.cherit.perpetualcalendar.ui.date_calculator.DateCalculatorFragment"
+        android:name="com.cherit.perpetualcalendar.ui.views.date_calculator.DateCalculatorFragment"
         android:label="@string/title_date_calculator"
         tools:layout="@layout/fragment_date_calculator" />
 
     <fragment
         android:id="@+id/navigation_shopping_sunday_list"
-        android:name="com.cherit.perpetualcalendar.ui.shopping_sunday.ShoppingSundayFragment"
+        android:name="com.cherit.perpetualcalendar.ui.views.shopping_sunday.ShoppingSundayFragment"
         android:label="@string/title_shopping_sunday"
         tools:layout="@layout/fragment_shopping_sunday" />
 

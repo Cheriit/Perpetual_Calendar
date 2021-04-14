@@ -1,4 +1,4 @@
-package com.cherit.perpetualcalendar.ui.shopping_sunday
+package com.cherit.perpetualcalendar.ui.views.shopping_sunday
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

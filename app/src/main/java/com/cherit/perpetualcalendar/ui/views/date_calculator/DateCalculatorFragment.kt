@@ -1,4 +1,4 @@
-package com.cherit.perpetualcalendar.ui.date_calculator
+package com.cherit.perpetualcalendar.ui.views.date_calculator
 
 import android.os.Bundle
 import android.view.LayoutInflater

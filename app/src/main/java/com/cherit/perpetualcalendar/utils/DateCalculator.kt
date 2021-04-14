@@ -1,11 +1,17 @@
 package com.cherit.perpetualcalendar.utils
 
 import com.cherit.perpetualcalendar.models.Event
+import java.time.LocalDate
 import java.util.*
 import kotlin.collections.ArrayList
 
 fun getShoppingSundayList(year: Int): ArrayList<Event> {
-    return ArrayList()
+    return arrayListOf(
+        Event("Niedziela " + year, Date()),
+        Event("Niedziela " + year, Date()),
+        Event("Niedziela " + year, Date()),
+        Event("Niedziela " + year, Date())
+    )
 }
 
 fun getMovingEvents(year: Int): ArrayList<Event> {
@@ -17,6 +23,8 @@ fun getMovingEvents(year: Int): ArrayList<Event> {
     )
 }
 
-fun getDateDifferential(fromDate: Date, toDate: Date): Int {
-    return 0;
+fun getDateDifferential(fromDate: LocalDate, toDate: LocalDate): Int {
+    if (fromDate > toDate)
+        return -1
+    return 0
 }

@@ -13,4 +13,7 @@
     <string name="moving_events">Ruchome święta w tym roku:</string>
     <string name="shopping_sundays_this_year">Niedziele handlowe w wybranym roku:</string>
     <string name="date_diff_calc">Kalkulator różnicy pomiędzy datami</string>
+    <string name="cant_calculate_date_diff">Nie można obliczyć różnicy pomiędzy datami. Sprawdź poprawność danych!</string>
+    <string name="day_diff_equals">\"Różnica pomiedzy dniami wynosi \"</string>
+    <string name="days">\" dni\"</string>
 </resources>

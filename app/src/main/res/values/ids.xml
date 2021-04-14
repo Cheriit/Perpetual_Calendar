@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="event_date" type="id" />
+    <item name="event_name" type="id" />
+    <item name="date_picker_text" type="id" />
+    <item name="date_picker_day" type="id" />
+    <item name="date_picker_month" type="id" />
+    <item name="date_picker_year" type="id" />
+    <item name="year_picker" type="id" />
+    <item name="text_year_selection" type="id" />
+    <item name="movingEventsTextView" type="id" />
+    <item name="events_list" type="id" />
+    <item name="shoppingSundaysTextView" type="id" />
+    <item name="shopping_sunday_list" type="id" />
+</resources>

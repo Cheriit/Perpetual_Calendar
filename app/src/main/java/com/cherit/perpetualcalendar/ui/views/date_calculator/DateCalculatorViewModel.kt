@@ -3,11 +3,10 @@ package com.cherit.perpetualcalendar.ui.views.date_calculator
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import java.time.LocalDate
 
 class DateCalculatorViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
-    }
-    val text: LiveData<String> = _text
+    var dateFrom: MutableLiveData<LocalDate> = MutableLiveData(LocalDate.now())
+    var dateTo: MutableLiveData<LocalDate> = MutableLiveData(LocalDate.now())
+    var dateDifference: MutableLiveData<Int> = MutableLiveData(0)
 }

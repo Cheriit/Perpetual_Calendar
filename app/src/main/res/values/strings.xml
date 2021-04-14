@@ -11,4 +11,6 @@
     <string name="year_selection">Wybór roku</string>
     <string name="select_year">Wybierz interesujący ciebie rok:</string>
     <string name="moving_events">Ruchome święta w tym roku:</string>
+    <string name="shopping_sundays_this_year">Niedziele handlowe w wybranym roku:</string>
+    <string name="date_diff_calc">Kalkulator różnicy pomiędzy datami</string>
 </resources>

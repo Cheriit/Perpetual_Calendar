@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">PerpetualCalendar</string>
+    <string name="app_name">Perpetual Calendar</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="calculator">Kalkulator</string>
+    <string name="shopping_sunday_list">Niedziele handlowe</string>
+    <string name="year_selection">Wybór roku</string>
 </resources>

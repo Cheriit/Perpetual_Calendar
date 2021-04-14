@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="horizontal"
-    tools:context=".ui.components.DatePicker.DatePicker">
+    tools:context=".ui.components.date_picker.DatePicker">
 
     <TextView
         android:id="@+id/date_picker_text"

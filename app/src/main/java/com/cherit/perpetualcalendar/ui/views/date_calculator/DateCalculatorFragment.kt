@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.cherit.perpetualcalendar.R
-import com.cherit.perpetualcalendar.ui.components.date_picker.DatePicker
 import com.cherit.perpetualcalendar.utils.getDateDifferential
+import java.time.LocalDate
 
 class DateCalculatorFragment : Fragment() {
 
@@ -30,32 +31,33 @@ class DateCalculatorFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_date_calculator, container, false)
 
         initViews(root)
+        setViewModelObservers()
+        setViewsListeners()
+
         return root
     }
 
     override fun onStart() {
         super.onStart()
-        fromDatePicker.setLabel("Data początkowa")
-        toDatePicker.setLabel("Data końcowa")
-        setViewModelObservers()
     }
 
-    fun initViews(root: View) {
-        fromDatePicker = childFragmentManager.findFragmentById(R.id.date_picker_from) as DatePicker
-        toDatePicker = childFragmentManager.findFragmentById(R.id.date_picker_to) as DatePicker
+    private fun initViews(root: View) {
+        fromDatePicker = root.findViewById(R.id.dateFrom)
+        toDatePicker = root.findViewById(R.id.dateTo)
         errorTextView = root.findViewById(R.id.date_calculator_errors)
         resultsTextView = root.findViewById(R.id.date_calculator_results)
     }
 
+    private fun setViewsListeners() {
+        fromDatePicker.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
+            dateCalculatorViewModel.dateFrom.value = LocalDate.of(year, monthOfYear, dayOfMonth)
+        }
+        toDatePicker.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
+            dateCalculatorViewModel.dateTo.value = LocalDate.of(year, monthOfYear, dayOfMonth)
+        }
+
+    }
     private fun setViewModelObservers() {
-        fromDatePicker.getDate().observe(viewLifecycleOwner, {
-            dateCalculatorViewModel.dateFrom.value = it
-        })
-
-        toDatePicker.getDate().observe(viewLifecycleOwner, {
-            dateCalculatorViewModel.dateTo.value = it
-        })
-
         dateCalculatorViewModel.dateFrom.observe(viewLifecycleOwner, {
             dateCalculatorViewModel.dateDifference.value = dateCalculatorViewModel.dateTo.value?.let { it1 -> getDateDifferential(it, it1) }
         })

@@ -7,10 +7,10 @@ import kotlin.collections.ArrayList
 
 fun getShoppingSundayList(year: Int): ArrayList<Event> {
     return arrayListOf(
-        Event("Niedziela " + year, Date()),
-        Event("Niedziela " + year, Date()),
-        Event("Niedziela " + year, Date()),
-        Event("Niedziela " + year, Date())
+        Event("Niedziela handlowa", Date(), "Niedziela handlowa na koniec miesiąca"),
+        Event("Niedziela handlowa", Date(), "Niedziela handlowa na koniec miesiąca"),
+        Event("Niedziela handlowa", Date(), "Niedziela handlowa na koniec miesiąca"),
+        Event("Niedziela handlowa", Date(), "Niedziela handlowa na koniec miesiąca")
     )
 }
 

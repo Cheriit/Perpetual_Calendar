@@ -22,34 +22,72 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <fragment
-        android:id="@+id/date_picker_from"
-        android:name="com.cherit.perpetualcalendar.ui.components.date_picker.DatePicker"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="16dp"
+        android:gravity="clip_horizontal|center_vertical|end"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateCalculatorTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/dateCalculatorTextView">
 
-    <fragment
-        android:id="@+id/date_picker_to"
-        android:name="com.cherit.perpetualcalendar.ui.components.date_picker.DatePicker"
+        <TextView
+            android:id="@+id/dateFromLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:text="@string/start_date" />
+
+        <DatePicker
+            android:id="@+id/dateFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:focusableInTouchMode="false"
+            android:startYear="1990" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:gravity="clip_horizontal|center_vertical|end"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_picker_from" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/dateToLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:text="@string/end_date" />
+
+        <DatePicker
+            android:id="@+id/dateTo"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:focusableInTouchMode="false"
+            android:startYear="1990" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/date_calculator_errors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_error"
@@ -58,21 +96,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_picker_to" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
         android:id="@+id/date_calculator_results"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_calculator_errors" />
-
+        app:layout_constraintTop_toTopOf="@+id/date_calculator_errors" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

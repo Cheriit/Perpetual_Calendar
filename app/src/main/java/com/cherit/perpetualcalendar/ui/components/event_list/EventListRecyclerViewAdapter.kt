@@ -22,6 +22,7 @@ class EventListRecyclerViewAdapter(
         val item = values[position]
         (item.name + ":").also { holder.nameView.text = it }
         holder.dateView.text = item.getDate()
+        holder.descriptionView.text = item.description
     }
 
     override fun getItemCount(): Int = values.size
@@ -29,6 +30,7 @@ class EventListRecyclerViewAdapter(
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nameView: TextView = view.findViewById(R.id.event_name)
         val dateView: TextView = view.findViewById(R.id.event_date)
+        val descriptionView: TextView = view.findViewById(R.id.event_description)
 
         override fun toString(): String {
             return super.toString() + " '" + nameView.text + "'"

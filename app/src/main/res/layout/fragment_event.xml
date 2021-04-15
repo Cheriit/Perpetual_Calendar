@@ -6,9 +6,10 @@
 
     <TextView
         android:id="@+id/event_name"
-        android:layout_width="150dp"
+        android:layout_width="168dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
         android:textAppearance="?attr/textAppearanceListItem"
         android:textColor="#323232"
         android:textSize="18sp" />
@@ -23,7 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:textAppearance="?attr/textAppearanceListItem"
             android:textColor="#4E4E4E"
             android:textSize="16sp" />
@@ -34,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:textAppearance="?attr/textAppearanceListItem"
             android:textColor="#4E4E4E"
             android:textSize="14sp" />

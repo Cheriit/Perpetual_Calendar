@@ -12,6 +12,4 @@ class YearSelectionViewModel : ViewModel() {
 
     var selectedYear: MutableLiveData<Int> = MutableLiveData<Int>(LocalDate.now().year)
 
-    var movingEvents: MutableLiveData<ArrayList<Event>> = MutableLiveData<ArrayList<Event>>()
-
 }

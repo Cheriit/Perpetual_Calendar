@@ -7,7 +7,7 @@
     tools:context=".ui.views.shopping_sunday.ShoppingSundayFragment">
 
     <TextView
-        android:id="@+id/shoppingSundaysTextView"
+        android:id="@+id/shopping_sundays_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shoppingSundaysTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/shopping_sundays_text_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

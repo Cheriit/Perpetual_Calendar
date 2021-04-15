@@ -9,4 +9,5 @@ data class Event(var name: String, var date: Date) {
     fun getDate(): String {
         return DateFormat.getDateInstance().format(date)
     }
+
 }

@@ -8,14 +8,17 @@ import android.widget.NumberPicker
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.cherit.perpetualcalendar.R
 import com.cherit.perpetualcalendar.ui.components.event_list.EventListRecyclerViewAdapter
 import com.cherit.perpetualcalendar.utils.getMovingEvents
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class YearSelectionFragment : Fragment() {
 
     private lateinit var yearSelectionViewModel: YearSelectionViewModel
+    private lateinit var bottomNavigation: BottomNavigationView
 
     private lateinit var eventsListView: RecyclerView
 
@@ -29,6 +32,7 @@ class YearSelectionFragment : Fragment() {
 
         val root = inflater.inflate(R.layout.fragment_year_selection, container, false)
         eventsListView = root.findViewById(R.id.events_list)
+        bottomNavigation = (activity?.findViewById(R.id.nav_view)) as BottomNavigationView
         initNumberPicker(root)
         setViewModelObservers()
         return root
@@ -42,6 +46,7 @@ class YearSelectionFragment : Fragment() {
         numberPicker.value = yearSelectionViewModel.selectedYear.value!!
         numberPicker.setOnValueChangedListener { _, _, newVal ->
             yearSelectionViewModel.selectedYear.value = newVal
+            bottomNavigation.menu.findItem(R.id.navigation_shopping_sunday_list).isVisible = newVal >= 2020
         }
     }
 

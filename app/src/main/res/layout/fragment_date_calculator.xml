@@ -7,7 +7,7 @@
     tools:context=".ui.views.date_calculator.DateCalculatorFragment">
 
     <TextView
-        android:id="@+id/dateCalculatorTextView"
+        android:id="@+id/date_calculator_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/date_picker_from_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -32,17 +32,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateCalculatorTextView">
+        app:layout_constraintTop_toBottomOf="@+id/date_calculator_text_view">
 
         <TextView
-            android:id="@+id/dateFromLabel"
+            android:id="@+id/date_from_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:text="@string/start_date" />
 
         <DatePicker
-            android:id="@+id/dateFrom"
+            android:id="@+id/date_from"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:layout_marginStart="20dp"
@@ -54,7 +54,7 @@
 
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/date_picker_to_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="clip_horizontal|center_vertical|end"
@@ -62,17 +62,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/date_picker_from_layout">
 
         <TextView
-            android:id="@+id/dateToLabel"
+            android:id="@+id/date_to_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:text="@string/end_date" />
 
         <DatePicker
-            android:id="@+id/dateTo"
+            android:id="@+id/date_to"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:layout_marginStart="20dp"
@@ -86,9 +86,9 @@
         android:id="@+id/date_calculator_errors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="56dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="30dp"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_error"
         android:textSize="14sp"
@@ -96,19 +96,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/date_picker_to_layout" />
 
     <TextView
         android:id="@+id/date_calculator_results"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/date_calculator_errors" />
+
+    <TextView
+        android:id="@+id/date_calculator_results_full"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="30dp"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_calculator_errors" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

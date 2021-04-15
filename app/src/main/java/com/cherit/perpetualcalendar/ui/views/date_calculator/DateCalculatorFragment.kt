@@ -20,6 +20,7 @@ class DateCalculatorFragment : Fragment() {
     private lateinit var toDatePicker: DatePicker
     private lateinit var errorTextView: TextView
     private lateinit var resultsTextView: TextView
+    private lateinit var resultsFullTextView: TextView
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -37,43 +38,51 @@ class DateCalculatorFragment : Fragment() {
         return root
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
     private fun initViews(root: View) {
-        fromDatePicker = root.findViewById(R.id.dateFrom)
-        toDatePicker = root.findViewById(R.id.dateTo)
+        fromDatePicker = root.findViewById(R.id.date_from)
+        toDatePicker = root.findViewById(R.id.date_to)
         errorTextView = root.findViewById(R.id.date_calculator_errors)
         resultsTextView = root.findViewById(R.id.date_calculator_results)
+        resultsFullTextView = root.findViewById(R.id.date_calculator_results_full)
     }
 
     private fun setViewsListeners() {
         fromDatePicker.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
-            dateCalculatorViewModel.dateFrom.value = LocalDate.of(year, monthOfYear, dayOfMonth)
+            dateCalculatorViewModel.dateFrom.value = LocalDate.of(year, monthOfYear+1, dayOfMonth)
         }
         toDatePicker.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
-            dateCalculatorViewModel.dateTo.value = LocalDate.of(year, monthOfYear, dayOfMonth)
+            dateCalculatorViewModel.dateTo.value = LocalDate.of(year, monthOfYear+1, dayOfMonth)
         }
 
     }
     private fun setViewModelObservers() {
         dateCalculatorViewModel.dateFrom.observe(viewLifecycleOwner, {
-            dateCalculatorViewModel.dateDifference.value = dateCalculatorViewModel.dateTo.value?.let { it1 -> getDateDifferential(it, it1) }
+            val dates = getDateDifferential(it, dateCalculatorViewModel.dateTo.value!!)
+            dateCalculatorViewModel.dateDifferenceFull.value = dates.first
+            dateCalculatorViewModel.dateDifference.value = dates.second
         })
 
         dateCalculatorViewModel.dateTo.observe(viewLifecycleOwner, {
-            dateCalculatorViewModel.dateDifference.value = dateCalculatorViewModel.dateFrom.value?.let { it1 -> getDateDifferential(it1, it) }
+            val dates = getDateDifferential(dateCalculatorViewModel.dateFrom.value!!, it)
+            dateCalculatorViewModel.dateDifferenceFull.value = dates.first
+            dateCalculatorViewModel.dateDifference.value = dates.second
         })
 
         dateCalculatorViewModel.dateDifference.observe(viewLifecycleOwner, { it ->
-            if (it >= 0) {
-                (getString(R.string.day_diff_equals) + it + getString(R.string.days)).also { resultsTextView.text = it }
+            if (dateCalculatorViewModel.dateFrom.value!! <= dateCalculatorViewModel.dateTo.value) {
+                (getString(R.string.day_diff_equals) + it + getString(R.string.days)).also { resultsFullTextView.text = it }
                 errorTextView.text = ""
-            }
-            else {
-                resultsTextView.text = ""
+            } else {
+                resultsFullTextView.text = ""
                 errorTextView.text = getString(R.string.cant_calculate_date_diff)
+            }
+        })
+
+        dateCalculatorViewModel.dateDifferenceFull.observe(viewLifecycleOwner, { it ->
+            if (dateCalculatorViewModel.dateFrom.value!! <= dateCalculatorViewModel.dateTo.value) {
+                (getString(R.string.day_diff_equals_full) + it + getString(R.string.days)).also { resultsTextView.text = it }
+            } else {
+                resultsTextView.text = ""
             }
         })
     }
